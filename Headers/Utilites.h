@@ -13,7 +13,7 @@ public:
     static LinkedList insertTestList(int size);
 
 private:
-    //Disallow instantiation of the object
+    //Disallow instantiation of this class
     Utilites(){}
 };
 
