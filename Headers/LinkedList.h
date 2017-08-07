@@ -16,16 +16,23 @@ private:
     };
 
     Node *head, *tail, *temp;
+    int size;
 
 public:
 
     /*constructor*/
     LinkedList();
+
     void addNode(int data);
     void deleteNode(int index);
     void printList();
     void reverseList();
     void addNodeSorted();
+
+    /*getters & setters*/
+    int getHead();
+    int getTail();
+    int Size();
 
 
 };
