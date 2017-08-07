@@ -15,9 +15,7 @@ private:
         Node* next;
     };
 
-    Node* head;
-    Node* tail;
-    Node* temp;
+    Node *head, *tail, *temp;
 
 public:
 

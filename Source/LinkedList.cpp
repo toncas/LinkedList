@@ -38,9 +38,21 @@ void LinkedList::deleteNode(int index) {
 }
 
 void LinkedList::printList() {
+
+    if(head == NULL) {
+        return;
+    }
+
     temp = head;
+    while(true){
+        cout << temp->data << " ";
 
+        if(temp->next == NULL){
+            break;
+        }
 
+        temp = temp->next;
+    }
 }
 
 void LinkedList::addNodeSorted() {
