@@ -40,7 +40,7 @@ void LinkedList::deleteNode(int index) {
      * 1.) Does the index exist?
      * 2.) Traverse to the index
      * 3.) 'remove' the node from the list
-     * 4.) rearrange the list
+     * 4.) rearrange the list (reattach pointers in the correct order
      */
     if(index >= size){
         return;
