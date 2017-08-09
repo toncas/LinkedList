@@ -51,7 +51,7 @@ void LinkedList::deleteNode(int index) {
     prev = nullptr;
     next = head->next;
 
-    //If index to be removed is the head or tail
+    //If index to be removed is the head
     if(index == 0){
         head = head->next;
         temp->next = nullptr;
