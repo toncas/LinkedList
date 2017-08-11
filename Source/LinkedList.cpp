@@ -33,6 +33,7 @@ void LinkedList::addNode(int data) {
         tail = newNode;
     }
     size++;
+    setSorted();
 }
 
 void LinkedList::deleteNode(int index) {
@@ -43,6 +44,7 @@ void LinkedList::deleteNode(int index) {
      * 4.) rearrange the list (reattach pointers in the correct order
      */
     if(index >= size){
+        setSorted();
         return;
     }
 
@@ -56,6 +58,7 @@ void LinkedList::deleteNode(int index) {
         head = head->next;
         temp->next = nullptr;
         size--;
+        setSorted();
         return;
     }
 
@@ -76,6 +79,7 @@ void LinkedList::deleteNode(int index) {
     }
 
     size--;
+    setSorted();
     return;
 
 }
@@ -98,23 +102,48 @@ void LinkedList::printList() {
     }
 }
 
-void LinkedList::addNodeSorted() {
+void LinkedList::addNodeSorted(int data) {
+
+    Node *temp = head;
+    Node *prev = nullptr;
+
+    Node *newNode = new Node();
+    newNode->data = data;
+    newNode->next = nullptr;
+
+    if(!isSorted){ //if the list is not sorted.
+        cout << "List isn't sorted" << endl;
+        return;
+    }
+    else if(size == 0) { //if it is an empty list
+        addNode(data);
+        size++;
+    }
+    else if(head->data >= data){ //the node needs to be prepended to the head of the list
+        newNode->next = head;
+        head = newNode;
+        size++;
+    }
+    else if(tail->data <= data){ //if node needs to be appended to the tail of the list
+        tail->next = newNode;
+        tail = newNode;
+        size++;
+    }
+    else{ //Normal operation
+        while(temp->data < data){
+            prev = temp;
+            temp = temp->next;
+        }
+        newNode->next = temp;
+        prev->next = newNode;
+        size++;
+    }
+
 
 }
 
 bool LinkedList::checkSorted() {
-    int check;
-    Node* temp = head;
-
-    while(temp->next != nullptr){
-        check = temp->data;
-        if(temp->next->data < check){
-            return false;
-        }
-
-        temp = temp->next;
-    }
-    return true;
+    return isSorted;
 }
 
 void LinkedList::reverseList() {
@@ -131,6 +160,7 @@ void LinkedList::reverseList() {
     }
     tail = head;
     head = prev;
+    setSorted();
 }
 
 int LinkedList::getHead() {
@@ -147,4 +177,23 @@ int LinkedList::getTail() {
 
 int LinkedList::Size() {
     return size;
+}
+
+/**Private Functions*/
+
+//Checks to see if the array is sorted and sets the private member 'isSorted' accordingly
+void LinkedList::setSorted() {
+    int check;
+    Node* temp = head;
+
+    while(temp->next != nullptr){
+        check = temp->data;
+        if(temp->next->data < check){
+            isSorted = false;
+            return;
+        }
+
+        temp = temp->next;
+    }
+    isSorted = true;
 }

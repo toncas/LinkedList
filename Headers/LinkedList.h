@@ -18,6 +18,7 @@ private:
     Node *head, *tail;
     int size;
     bool isSorted;
+    void setSorted();
 
 public:
 
@@ -28,13 +29,14 @@ public:
     void deleteNode(int index);
     void printList();
     void reverseList();
-    void addNodeSorted();
-    bool checkSorted();
+    void addNodeSorted(int data);
 
     /*getters & setters*/
     int getHead();
     int getTail();
     int Size();
+    bool checkSorted();
+
 
 
 };
