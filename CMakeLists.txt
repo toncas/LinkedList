@@ -3,5 +3,5 @@ project(LinkedList)
 
 set(CMAKE_CXX_STANDARD 11)
 
-set(SOURCE_FILES Source/main.cpp Source/LinkedList.cpp Headers/LinkedList.h Source/Utilites.cpp Headers/Utilites.h)
+set(SOURCE_FILES Source/main.cpp Source/LinkedList.cpp Headers/LinkedList.h Source/Utilities.cpp Headers/Utilities.h)
 add_executable(LinkedList ${SOURCE_FILES})

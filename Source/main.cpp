@@ -1,14 +1,14 @@
 #include <iostream>
 #include "../Headers/LinkedList.h"
-#include "../Headers/Utilites.h"
+#include "../Headers/Utilities.h"
 
 using namespace std;
 
 int main() {
     LinkedList list, listFromArray;
-    int testArray[10] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+    vector<int> testArray = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
 
-    list = Utilites::insertTestList(20);
+    list = Utilities::insertTestList(20);
     list.printList();
     cout << endl;
 
@@ -28,8 +28,7 @@ int main() {
     cout << endl;
 
     cout << "Testing Array to Linked List Conversion...." << endl;
-    cout << "testArray size: " << sizeof(testArray) << endl;
-    listFromArray = Utilites::arrayToLinkedList(testArray);
+    listFromArray = Utilities::vectorToLinkedList(testArray);
 
     listFromArray.printList();
     cout << endl;

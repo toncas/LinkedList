@@ -6,16 +6,17 @@
 #define LINKEDLIST_UTILITES_H
 
 
+#include <vector>
 #include "LinkedList.h"
 
-class Utilites {
+class Utilities {
 public:
     static LinkedList insertTestList(int size);
-    static LinkedList arrayToLinkedList(int arrayInput[]);
+    static LinkedList vectorToLinkedList(std::vector<int> input);
 
 private:
     //Disallow instantiation of this class
-    Utilites(){}
+    Utilities(){}
 };
 
 
