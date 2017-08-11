@@ -11,6 +11,7 @@
 class Utilites {
 public:
     static LinkedList insertTestList(int size);
+    static LinkedList arrayToLinkedList(int arrayInput[]);
 
 private:
     //Disallow instantiation of this class

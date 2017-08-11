@@ -13,3 +13,14 @@ LinkedList Utilites::insertTestList(int size) {
 
     return *output;
 }
+
+LinkedList Utilites::arrayToLinkedList(int arrayInput[]) {
+
+    LinkedList *output = new LinkedList();
+
+    for(const int &element : arrayInput){ //Not Valid
+        output->addNode(element);
+    }
+
+    return *output;
+}
