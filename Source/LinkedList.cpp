@@ -12,8 +12,8 @@ using namespace std;
 LinkedList::LinkedList() {
     head = nullptr;
     tail = nullptr;
-    temp = nullptr;
     size = 0;
+    isSorted = false;
 
 }
 
@@ -47,7 +47,7 @@ void LinkedList::deleteNode(int index) {
     }
 
     Node *prev, *next;
-    temp = head;
+    Node *temp = head;
     prev = nullptr;
     next = head->next;
 
@@ -86,7 +86,7 @@ void LinkedList::printList() {
         return;
     }
 
-    temp = head;
+    Node *temp = head;
     while(true){
         cout << temp->data << " ";
 
@@ -102,8 +102,35 @@ void LinkedList::addNodeSorted() {
 
 }
 
+bool LinkedList::checkSorted() {
+    int check;
+    Node* temp = head;
+
+    while(temp->next != nullptr){
+        check = temp->data;
+        if(temp->next->data < check){
+            return false;
+        }
+
+        temp = temp->next;
+    }
+    return true;
+}
+
 void LinkedList::reverseList() {
 
+    Node *prev = nullptr;
+    Node *curr = head;
+    Node * next;
+
+    while(curr != nullptr){
+        next = curr->next;
+        curr->next = prev;
+        prev = curr;
+        curr = next;
+    }
+    tail = head;
+    head = prev;
 }
 
 int LinkedList::getHead() {

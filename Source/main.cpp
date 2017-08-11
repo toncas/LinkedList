@@ -15,6 +15,8 @@ int main() {
     cout << "Head: " << list.getHead() << endl;
     cout << "Tail: " << list.getTail() << endl;
     cout << "Size: " << list.Size() << endl;
+    cout << "isSorted: " << list.checkSorted() << endl;
+
 
     list.deleteNode(9);
     list.deleteNode(0);
@@ -24,6 +26,7 @@ int main() {
     cout << "Head: " << list.getHead() << endl;
     cout << "Tail: " << list.getTail() << endl;
     cout << "Size: " << list.Size() << endl;
+    cout << "isSorted: " << list.checkSorted() << endl;
 
     cout << endl;
 
@@ -36,6 +39,17 @@ int main() {
     cout << "Head: " << listFromArray.getHead() << endl;
     cout << "Tail: " << listFromArray.getTail() << endl;
     cout << "Size: " << listFromArray.Size() << endl;
+    cout << "isSorted: " << listFromArray.checkSorted() << endl;
+
+    cout << "Testing reversing linked list...." << endl;
+    listFromArray.reverseList();
+    listFromArray.printList();
+    cout << endl;
+
+    cout << "Head: " << listFromArray.getHead() << endl;
+    cout << "Tail: " << listFromArray.getTail() << endl;
+    cout << "Size: " << listFromArray.Size() << endl;
+    cout << "isSorted: " << listFromArray.checkSorted() << endl;
 
     return 0;
 }

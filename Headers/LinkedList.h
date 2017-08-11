@@ -15,8 +15,9 @@ private:
         Node* next;
     };
 
-    Node *head, *tail, *temp;
+    Node *head, *tail;
     int size;
+    bool isSorted;
 
 public:
 
@@ -28,6 +29,7 @@ public:
     void printList();
     void reverseList();
     void addNodeSorted();
+    bool checkSorted();
 
     /*getters & setters*/
     int getHead();
