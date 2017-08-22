@@ -175,6 +175,23 @@ int LinkedList::getTail() {
 
 }
 
+int LinkedList::getData(int index) {
+
+    if(index < 0){
+        return NULL;
+    }
+
+    Node *h = head;
+    int i = 0;
+
+    while(h != nullptr && i < index){
+        i++;
+        h = h->next;
+    }
+    return h->data;
+
+}
+
 int LinkedList::Size() {
     return size;
 }

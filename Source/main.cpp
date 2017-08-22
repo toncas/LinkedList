@@ -30,7 +30,7 @@ int main() {
 
     cout << endl;
 
-    cout << "Testing Array to Linked List Conversion...." << endl;
+    cout << "Testing std::vector to Linked List Conversion...." << endl;
     listFromArray = Utilities::vectorToLinkedList(testArray);
 
     listFromArray.printList();

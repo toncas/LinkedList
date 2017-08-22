@@ -33,10 +33,10 @@ public:
 
     /*getters & setters*/
     int getHead();
+    int getData(int index);
     int getTail();
     int Size();
     bool checkSorted();
-
 
 
 };
