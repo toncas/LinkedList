@@ -193,7 +193,21 @@ int LinkedList::getData(int index) {
 }
 
 int LinkedList::Size() {
-    return size;
+    int listSize = 0;
+
+    if(head == nullptr)
+    {
+        return listSize;
+    }
+
+    Node *temp = head;
+
+    while(temp != nullptr){
+        listSize++;
+        temp = temp->next;
+    }
+
+    return listSize;
 }
 
 /**Private Functions*/
