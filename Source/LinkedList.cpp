@@ -8,8 +8,6 @@
 
 #include "../Headers/LinkedList.h"
 
-using namespace std;
-
 LinkedList::LinkedList() {
     head = nullptr;
     tail = nullptr;
@@ -93,7 +91,7 @@ void LinkedList::printList() {
 
     Node *temp = head;
     while(true){
-        cout << temp->data << " ";
+        std::cout << temp->data << " ";
 
         if(temp->next == nullptr){
             break;
@@ -113,7 +111,7 @@ void LinkedList::addNodeSorted(int data) {
     newNode->next = nullptr;
 
     if(!isSorted){ //if the list is not sorted.
-        cout << "List isn't sorted" << endl;
+        std::cout << "List isn't sorted" << std::endl;
         return;
     }
     else if(size == 0) { //if it is an empty list
