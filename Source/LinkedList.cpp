@@ -227,10 +227,6 @@ void LinkedList::sort() {
         nodeListVector.push_back(temp->data);
         temp = temp->next;
     }
-    for(std::vector<int>::const_iterator i = nodeListVector.begin(); i != nodeListVector.begin(); i++ ){
-        cout << *i << endl;
-    }
-
     std::sort(nodeListVector.begin(), nodeListVector.end());
 
     temp = head;
