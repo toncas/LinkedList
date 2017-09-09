@@ -67,5 +67,18 @@ int main() {
     cout << "Size: " << listFromArray.Size() << endl;
     cout << "isSorted: " << listFromArray.checkSorted() << endl;
 
+    cout << "Testing sorting list...." << endl;
+    listFromArray.sort();
+    listFromArray.printList();
+    cout << endl;
+
+    cout << "Head: " << listFromArray.getHead() << endl;
+    cout << "Tail: " << listFromArray.getTail() << endl;
+    cout << "Size: " << listFromArray.Size() << endl;
+    cout << "isSorted: " << listFromArray.checkSorted() << endl;
+
+
+
+
     return 0;
 }
