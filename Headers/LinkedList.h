@@ -30,6 +30,7 @@ public:
     void printList();
     void reverseList();
     void addNodeSorted(int data);
+    void sort();
 
     /*getters & setters*/
     int getHead();

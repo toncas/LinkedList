@@ -4,6 +4,7 @@
 
 #include <cstdlib>
 #include <iostream>
+#include <vector>
 
 #include "../Headers/LinkedList.h"
 
@@ -208,6 +209,30 @@ int LinkedList::Size() {
     }
 
     return listSize;
+}
+
+void LinkedList::sort() {
+    /*Im not sure how to do this in constant space...
+     * At the moment this is what I have:
+     * 1. For each node store the data into a vector
+     * 2. sort the vector
+     * 3. for each entry in the vector, overwrite the data for each node
+     * */
+
+    std::vector<int> nodeListVector;
+    Node *temp = head;
+
+    while(temp != nullptr){
+        nodeListVector.push_back(temp->data);
+    }
+
+    std::sort(nodeListVector.begin(), nodeListVector.end());
+
+    temp = head;
+    for(int i = 0; i < nodeListVector.size(); i++){
+        temp->data = nodeListVector[i];
+        temp = temp->next;
+    }
 }
 
 /**Private Functions*/
